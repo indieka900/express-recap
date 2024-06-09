@@ -19,7 +19,6 @@ app.get('/', (req, res) =>{
 });
 
 
-
 mongoose.connect("mongodb+srv://jose:KTGWIGJLzkSacGvA@food.bcrens6.mongodb.net/Node-API?retryWrites=true&w=majority&appName=food")
 .then(()=>{
     console.log("Connected to the database");

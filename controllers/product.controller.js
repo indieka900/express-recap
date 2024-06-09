@@ -26,7 +26,8 @@ const getProduct = async (req, res) => {
     try {
         const { id } = req.params;
         const product = await Product.findById(id);
-        res.status(200).json(product)
+        const {__v, createdAt, updatedAt, ...updatedproductInfo} = product._doc;
+        res.status(200).json(updatedproductInfo)
     } catch (error) {
         res.status(500).json({message: error.message})
     }
@@ -43,7 +44,8 @@ const updateProduct = async (req, res) => {
         }
 
         const updated_product = await Product.findById(id)
-        res.status(200).json(updated_product)
+        const {__v, createdAt, updatedAt, ...updatedproductInfo} = updated_product._doc;
+        res.status(200).json(updatedproductInfo)
     } catch (error) {
         res.status(500).json({message: error.message})
     }

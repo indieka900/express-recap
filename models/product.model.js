@@ -19,6 +19,7 @@ const ProductSchema = mongoose.Schema(
     imageUrl: {
       type: String,
       required: false,
+      default: "default.png"
     },
   },
   //two more fields for createdAt and updatedAt

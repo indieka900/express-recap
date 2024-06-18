@@ -14,11 +14,12 @@ app.use("/api", p_router)
 
 //insomnia === postman
 
+//default route `localhost:3000`
 app.get('/', (req, res) =>{
     res.send("Hello from node api new one")
 });
 
-
+//connecting to mongoDB before running server
 mongoose.connect("mongodb+srv://jose:KTGWIGJLzkSacGvA@food.bcrens6.mongodb.net/Node-API?retryWrites=true&w=majority&appName=food")
 .then(()=>{
     console.log("Connected to the database");
